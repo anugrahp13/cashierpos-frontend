@@ -28,6 +28,9 @@ import TransactionsIndex from "../views/transactions/index.jsx";
 //import view print
 import Print from "../views/transactions/print/print.jsx";
 
+//import view sales index
+import SalesIndex from "../views/sales/index.jsx";
+
 export default function AppRoutes() {
   //destruct state "token" from store
   const { token } = useStore();
@@ -80,6 +83,12 @@ export default function AppRoutes() {
       <Route
         path="/transactions/print"
         element={token ? <Print /> : <Navigate to="/" replace />}
+      />
+
+      {/* route "/sales" */}
+      <Route
+        path="/sales"
+        element={token ? <SalesIndex /> : <Navigate to="/" replace />}
       />
     </Routes>
   );
