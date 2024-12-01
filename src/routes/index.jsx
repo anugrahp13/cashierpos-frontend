@@ -16,6 +16,9 @@ import CategoriesIndex from "../views/categories/index.jsx";
 //import view products
 import ProductsIndex from "../views/products/index.jsx";
 
+//import view customers
+import CustomersIndex from "../views/customers/index.jsx";
+
 export default function AppRoutes() {
   //destruct state "token" from store
   const { token } = useStore();
@@ -44,6 +47,12 @@ export default function AppRoutes() {
       <Route
         path="/products"
         element={token ? <ProductsIndex /> : <Navigate to="/" replace />}
+      />
+
+      {/* route "/customers" */}
+      <Route
+        path="/customers"
+        element={token ? <CustomersIndex /> : <Navigate to="/" replace />}
       />
     </Routes>
   );
