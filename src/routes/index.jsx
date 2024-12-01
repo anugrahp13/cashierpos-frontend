@@ -10,6 +10,9 @@ import Login from "../views/auth/login.jsx";
 //import view dashboard
 import Dashboard from "../views/dashboard/index.jsx";
 
+//import view categories
+import CategoriesIndex from "../views/categories/index.jsx";
+
 export default function AppRoutes() {
   //destruct state "token" from store
   const { token } = useStore();
@@ -26,6 +29,12 @@ export default function AppRoutes() {
       <Route
         path="/dashboard"
         element={token ? <Dashboard /> : <Navigate to="/" replace />}
+      />
+
+      {/* route "/categories" */}
+      <Route
+        path="/categories"
+        element={token ? <CategoriesIndex /> : <Navigate to="/" replace />}
       />
     </Routes>
   );
