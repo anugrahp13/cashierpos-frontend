@@ -13,6 +13,9 @@ import Api from "../../services/api";
 //import component pagination
 import PaginationComponent from "../../components/Pagination";
 
+//import create category
+import CategoryCreate from "./create";
+
 export default function CategoriesIndex() {
   //state categories
   const [categories, setCategories] = useState([]);
@@ -97,6 +100,7 @@ export default function CategoriesIndex() {
           <div className="row">
             <div className="col-12 mb-3">
               <div className="input-group">
+                <CategoryCreate fetchData={fetchData} />
                 <input
                   type="text"
                   className="form-control"
